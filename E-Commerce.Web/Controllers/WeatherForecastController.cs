@@ -1,9 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce.Web.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")]    // BaseUrl/api/WeatherForecast
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -19,7 +19,7 @@ namespace E_Commerce.Web.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get()   //  EndPoint مش هيفرق معاك اسم ال  Verb   هيكون علي حسب ال 
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
