@@ -24,4 +24,4 @@ namespace PersistenceLayer.Repositories
 
         public void Update(TEntity entity) => _dbContext.Update(entity);
     }
-}
+}         //  UnitOfWork    ف الاحسن اشتغل علي ال  Repository  هنا علشان ممكن يكون في اكتر من   SaveChanges   ومش هنعمل 
