@@ -31,8 +31,9 @@ namespace E_Commerce.Web
             #region Data Seeding
             using var Scoop = app.Services.CreateScope();
             var ObjectOfDataSeeding = Scoop.ServiceProvider.GetRequiredService<IDataSeeding>();
-           await  ObjectOfDataSeeding.DataSeedAsync(); 
+            await  ObjectOfDataSeeding.DataSeedAsync(); 
             #endregion
+
             #region Configure the HTTP request pipeline
             if (app.Environment.IsDevelopment())
             {
