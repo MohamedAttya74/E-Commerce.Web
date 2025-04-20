@@ -2,8 +2,11 @@
 using DomainLayer.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using PersistenceLayer;
 using PersistenceLayer.Data;
 using PersistenceLayer.Repositories;
+using Service.MappingProfiles;
+
 
 namespace E_Commerce.Web
 {
@@ -26,6 +29,8 @@ namespace E_Commerce.Web
             });
             builder.Services.AddScoped<IDataSeeding, IDataSeeding>();
             builder.Services.AddScoped<IUnitOfWork , UnitOfWork>();
+            builder.Services.AddAutoMapper(  (typeof(Service.AssemplyReference).Assembly));
+
             #endregion
 
             var app = builder.Build();
