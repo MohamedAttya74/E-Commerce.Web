@@ -6,6 +6,7 @@ using PersistenceLayer;
 using PersistenceLayer.Data;
 using PersistenceLayer.Repositories;
 using Service.MappingProfiles;
+using ServiceAbstraction;
 
 
 namespace E_Commerce.Web
@@ -30,6 +31,7 @@ namespace E_Commerce.Web
             builder.Services.AddScoped<IDataSeeding, IDataSeeding>();
             builder.Services.AddScoped<IUnitOfWork , UnitOfWork>();
             builder.Services.AddAutoMapper(  (typeof(Service.AssemplyReference).Assembly));
+            builder.Services.AddScoped<IServiceManger , IServiceManger>();
 
             #endregion
 
