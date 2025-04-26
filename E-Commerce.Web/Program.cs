@@ -33,7 +33,6 @@ namespace E_Commerce.Web
             builder.Services.AddScoped<IUnitOfWork , UnitOfWork>();
             builder.Services.AddAutoMapper(  (typeof(Service.AssemplyReference).Assembly));
             builder.Services.AddScoped<IServiceManger , ServiceManger>();
-
             #endregion
 
             var app = builder.Build();
@@ -52,6 +51,7 @@ namespace E_Commerce.Web
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
 
             app.MapControllers(); 

@@ -29,6 +29,7 @@ namespace PresentaionLayer.Controllers
             var Product = await _serviceManger.ProductService.GetProductByIdAsync(id);
             return Ok(Product);
         }
+            
         // Get All Types 
         //Get BaseUrl/api/Products/types 
         [HttpGet("types")]
