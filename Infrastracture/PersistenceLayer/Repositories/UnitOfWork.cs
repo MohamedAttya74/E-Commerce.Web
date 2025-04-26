@@ -12,7 +12,7 @@ namespace PersistenceLayer.Repositories
     public class UnitOfWork(StoreDbContext _dbContext) : IUnitOfWork
     {
         private readonly Dictionary<string , object> _reositories = [];
-        public IGenaricRepository<TEntity, Tkey> GenaricRepository<TEntity, Tkey>() where TEntity : BaseEntity<Tkey>
+        public IGenaricRepository<TEntity, Tkey> GetRepository<TEntity, Tkey>() where TEntity : BaseEntity<Tkey>
         {
             // Get Name 
             var TypeName = typeof(TEntity).Name;

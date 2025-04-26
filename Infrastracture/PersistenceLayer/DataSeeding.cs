@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PersistenceLayer
 {
-    internal class DataSeeding(StoreDbContext _dbContext) : IDataSeeding
+    public class DataSeeding(StoreDbContext _dbContext) : IDataSeeding
     {
         public async Task DataSeedAsync()
         {

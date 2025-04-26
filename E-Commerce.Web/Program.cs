@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using PersistenceLayer;
 using PersistenceLayer.Data;
 using PersistenceLayer.Repositories;
+using Service;
 using Service.MappingProfiles;
 using ServiceAbstraction;
 
@@ -28,10 +29,10 @@ namespace E_Commerce.Web
             {
                 Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
-            builder.Services.AddScoped<IDataSeeding, IDataSeeding>();
+            builder.Services.AddScoped<IDataSeeding, DataSeeding>();
             builder.Services.AddScoped<IUnitOfWork , UnitOfWork>();
             builder.Services.AddAutoMapper(  (typeof(Service.AssemplyReference).Assembly));
-            builder.Services.AddScoped<IServiceManger , IServiceManger>();
+            builder.Services.AddScoped<IServiceManger , ServiceManger>();
 
             #endregion
 
